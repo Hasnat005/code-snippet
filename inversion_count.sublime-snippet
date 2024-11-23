@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+#include<bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+using namespace std;
+
+template <typename T> using o_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+long long inversion_cnt(vector<int> a) {
+    o_set<int> se;
+    int n = a.size();
+    long long ans = 0;
+    for(int i = 0; i < n; i++) {
+        ans += se.order_of_key(a[i]);
+        se.insert(a[i]);
+    }
+    return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>inversion_cnt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

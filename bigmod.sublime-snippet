@@ -1,0 +1,82 @@
+<snippet>
+	<content><![CDATA[
+#include<bits/stdc++.h>
+using namespace std;
+
+const int mod = 1e9 + 7;
+
+// a ^ n % mod
+int power(int a, int n, int mod) {
+  if (n == 1) return a % mod;
+  if (n % 2 == 0) {
+    int x = power(a, n / 2, mod);
+    return 1LL * x * x % mod;
+  }
+  else {
+    int x = power(a, n / 2, mod);
+    return (1LL * x * x) % mod * a % mod;
+  }
+}
+int iterative_power(int a, int n) {
+  int ans = 1;
+  while (n) {
+    if (n % 2 == 1) ans = 1LL * ans * a % mod;
+    a = 1LL * a * a % mod;
+    n /= 2;
+  }
+  return ans;
+}
+int bin_power(int a, int n) {
+  int ans = 1;
+  for (int i = 0; i < 30; i++) {
+    if ((n >> i) & 1) {
+      ans = 1LL * ans * a % mod;
+    }
+    a = 1LL * a * a % mod;
+  }
+  return ans;
+}
+
+// 1 / a % p
+int inverse(int a, int p) {
+  return power(a, p - 2, p);
+}
+
+// a * n % mod;
+long long mulmod(long long a, long long n, long long mod) {
+  if (n == 1) return a % mod;
+  if (n % 2 == 0) {
+    long long x = mulmod(a, n / 2, mod);
+    return (x + x) % mod;
+  }
+  else {
+    long long x = mulmod(a, n / 2, mod);
+    return ((x + x) % mod + a) % mod;
+  }
+}
+// a * n % mod;
+long long mulmod_easy(long long a, long long n, long long mod) {
+  return __int128(a) * n % mod;
+}
+int32_t main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int a = 3, n = 1000000000;
+  // int ans = 1;
+  // for (int i = 1; i <= n; i++) {
+  //   ans = 1LL * ans * a % mod;
+  // }
+  // cout << ans << '\n';
+  cout << power(a, n, mod) << '\n';
+  cout << iterative_power(a, n) << '\n';
+  cout << bin_power(a, n) << '\n';
+  cout << inverse(3, 5) << '\n';
+  cout << mulmod(3, 4, mod) << '\n';
+  return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bigmod</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

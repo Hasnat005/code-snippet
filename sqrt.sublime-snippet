@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+long long int_sqrt (long long x) {
+  long long ans = 0;
+  for (long long k = 1LL << 30; k != 0; k /= 2) {
+    if ((ans + k) * (ans + k) <= x) {
+      ans += k;
+    }
+  }
+  return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sqrt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

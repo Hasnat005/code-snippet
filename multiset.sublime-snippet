@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+//-------------------------------->Multiset<----------------------------------------//
+// multiset m;
+// m.insert() : O(logn)
+// m.erase(x) -> delete all occurances of x : O(logn)
+
+// m.find(x) -> return iterator : O(logn)
+// find(m.begin(), m.end(), x) -> return iterator : O(logn * logn)
+
+// m.erase(find(m.begin() m.end() x)) -> delete one occurance of x : O(n) [(find)O(n) + (erase)O(logn)
+// m.erase(m.find(x)) -> delete one occurance of x : O(logn) [O(logn) + O(logn)]
+
+// upper_bound(m.begin(),m.end(),x) -> return iterator : O(logn * logn) due to bidirectional iterators
+// m.upper_bound(x) -> return iterator : O(logn) due to a balanced binary search tree
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Multiset</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

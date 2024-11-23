@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+int nCr[N + 1][N + 1];
+void ncr() {
+    nCr[0][0] = 1;
+    for(int i = 1; i <= N; i++) {
+        nCr[i][0] = 1;
+        for(int j = 1; j <= N; j++) {
+            nCr[i][j] = nCr[i - 1][j - 1] + nCr[i - 1][j];
+        }
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>nCr_1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

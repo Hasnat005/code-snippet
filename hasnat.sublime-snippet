@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+#include<bits/stdc++.h>
+using namespace std;
+
+const int MOD = 1e9 + 7;
+const int N = 1e5; 
+
+void solve() {
+
+}
+
+signed main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int t = 1; 
+    cin >> t;
+    for(int tc = 1; tc <= t; tc++) {
+        solve();
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hasnat</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

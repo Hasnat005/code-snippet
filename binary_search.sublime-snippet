@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+int l = 0, r = 1e12;
+    while(r - l > 1) {
+        int mid = (l + r) / 2;
+        if(check(mid)) l = mid;
+        else r = mid;
+    }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>BS</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
